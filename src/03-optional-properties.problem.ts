@@ -1,6 +1,12 @@
+import { StringifyOptions } from "querystring";
 import { expect, it } from "vitest";
 
-export const getName = (params: { first: string; last: string }) => {
+interface getNameParam {
+  first: string;
+  last?: string;
+}
+
+export const getName = (params: getNameParam) => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }
